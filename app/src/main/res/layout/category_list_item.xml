@@ -7,7 +7,7 @@
     android:layout_height="150dp">
 
     <ImageView
-        android:id="@+id/tv_catergories"
+        android:id="@+id/iv_catergories"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginBottom="8dp"
@@ -37,5 +37,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_catergories" />
+        app:layout_constraintTop_toTopOf="@+id/iv_catergories" />
 </android.support.constraint.ConstraintLayout>

@@ -1,15 +1,14 @@
 package com.zensolutions.coderswag.Services
 
-import com.zensolutions.coderswag.Model.Catergroy
+import com.zensolutions.coderswag.Model.Categroy
 import com.zensolutions.coderswag.Model.Product
-import java.util.*
 
 object DataService {
     val catergories = listOf(
-            Catergroy("SHIRTS", "shirtimage"),
-            Catergroy("HOODIES", "hoodieimage"),
-            Catergroy("HATS", "hatimage"),
-            Catergroy("DIGITAL", "digitalgoodsimage")
+            Categroy("SHIRTS", "shirtimage"),
+            Categroy("HOODIES", "hoodieimage"),
+            Categroy("HATS", "hatimage"),
+            Categroy("DIGITAL", "digitalgoodsimage")
     )
 
     val hats = listOf(
