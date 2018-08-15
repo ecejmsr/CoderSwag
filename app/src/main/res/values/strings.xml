@@ -2,4 +2,8 @@
     <string name="app_name">CoderSwag</string>
     <string name="image_category">image category</string>
     <string name="title_hat">HATS</string>
+    <string name="product">Products</string>
+    <string name="Categories">Categories</string>
+    <string name="product_title_item">PRODUCT NAME</string>
+    <string name="product_price_item">$XX</string>
 </resources>
