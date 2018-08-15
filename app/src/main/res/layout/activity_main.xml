@@ -17,7 +17,7 @@
         app:layout_constraintTop_toBottomOf="@id/lv_category_list"
         app:layout_constraintEnd_toStartOf="@id/lv_category_list"/>
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/lv_category_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

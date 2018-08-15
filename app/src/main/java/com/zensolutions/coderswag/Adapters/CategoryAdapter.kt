@@ -7,27 +7,36 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.zensolutions.coderswag.Model.Categroy
+import com.zensolutions.coderswag.Model.Category
 import com.zensolutions.coderswag.R
 import com.zensolutions.coderswag.Services.DataService.catergories
 
-class CategoryAdapter(context: Context, categories: List<Categroy>) : BaseAdapter()
+class CategoryAdapter(context: Context, categories: List<Category>) : BaseAdapter()
 {
     val context= context
     val categories= categories
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val catergoryView: View
+        val holder: ViewHolder
 
-        catergoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
-        val categoryImage : ImageView = catergoryView.findViewById(R.id.iv_catergories)
-        val catergoryName: TextView = catergoryView.findViewById(R.id.tv_category_name)
+        if(convertView == null){
+            catergoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
+            holder = ViewHolder()
+            holder.categoryImage= catergoryView.findViewById(R.id.iv_catergories)
+            holder.categoryName= catergoryView.findViewById(R.id.tv_category_name)
+
+            catergoryView.tag= holder
+        }else{
+            holder= convertView.tag as ViewHolder
+            catergoryView= convertView
+        }
 
         val category = catergories[position]
 
         val resourceId= context.resources.getIdentifier(category.img, "drawable", context.packageName)
-        categoryImage.setImageResource(resourceId)
-        catergoryName.text= category.title
+        holder.categoryImage?.setImageResource(resourceId)
+        holder.categoryName?.text= category.title
 
         return catergoryView
     }
@@ -42,5 +51,10 @@ class CategoryAdapter(context: Context, categories: List<Categroy>) : BaseAdapte
 
     override fun getCount(): Int {
         return categories.count()
+    }
+
+    private class ViewHolder{
+        var categoryImage: ImageView? = null
+        var categoryName: TextView?= null
     }
 }
